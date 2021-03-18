@@ -61,6 +61,10 @@ The motion graph is set up with a jetpack (hold space / jump to hover), ground d
 
 The bridges each have a trigger zone set up that enables the character activator. Running over the bridges will cause them to collapse after a brief delay.
 
+## Notes
+
+Due to the way that the NeoCharacterController acts on physics objects (it is pushed by and exerts a force on all non-kinematic rigidbodies as it moves), I found that the best setup for Rayfire clusters was to set their simulation type as *Kinematic* and then activate them via the integration systems. If the rayfire rigid is set to use the *Dynamic*, *Sleeping* or *Inactive* simulation types, then you can slowly push through the objects just by holding down the movement direction into their surface.
+
 ## Issues
 
 - Very occasionally the wrecking ball will not trigger the objects to destruct, so it will just stop the character dead.
