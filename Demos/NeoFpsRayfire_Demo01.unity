@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -88,7 +88,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 3aa603679ad649a428554edc1908ec72,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -3694,7 +3695,6 @@ Transform:
   - {fileID: 2031295233}
   - {fileID: 669526964}
   - {fileID: 89173404}
-  - {fileID: 614091603}
   m_Father: {fileID: 2003748521}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13092,7 +13092,6 @@ Transform:
   - {fileID: 1129563223}
   - {fileID: 1914104516}
   - {fileID: 1333330595}
-  - {fileID: 2071203643}
   m_Father: {fileID: 2003748521}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13955,6 +13954,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307079748}
   m_Mesh: {fileID: 43409481243670598, guid: 297fb281d5890b8478cf5828f2b01ad2, type: 2}
+--- !u!1001 &307194840
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1758382257}
+    m_Modifications:
+    - target: {fileID: 1874634120475592, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
+      propertyPath: m_Name
+      value: Prop_InfoPoint_Scene (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.99999166
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00409211
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180.469
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114527767597719066, guid: 4ec3d31339b953f4eb7e015de46ebecf,
+        type: 3}
+      propertyPath: m_Title
+      value: Destruction
+      objectReference: {fileID: 0}
+    - target: {fileID: 114527767597719066, guid: 4ec3d31339b953f4eb7e015de46ebecf,
+        type: 3}
+      propertyPath: m_Info
+      value: "Each of these structures is destructible. You can use your weapons,
+        or your own body to dismantle them.\r\n\r\nBarge through walls using the ability
+        key when grounded, or ground slam with the ability key while airborne."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
+--- !u!4 &307194841 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf,
+    type: 3}
+  m_PrefabInstance: {fileID: 307194840}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &307243823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16467,6 +16541,83 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350127771}
   m_Mesh: {fileID: 4300058, guid: 8a312a861d188f4459a64acbef7e2716, type: 3}
+--- !u!1 &352858171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 352858172}
+  - component: {fileID: 352858174}
+  - component: {fileID: 352858173}
+  m_Layer: 0
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &352858172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352858171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 780370875}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &352858173
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352858171}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 73dafa491245d68499be3bd775e8a073, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &352858174
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352858171}
+  m_Mesh: {fileID: 4300172, guid: 090aacbf0d73538449debb6816dd5605, type: 3}
 --- !u!1 &354908419
 GameObject:
   m_ObjectHideFlags: 0
@@ -29194,12 +29345,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 609194517}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &614091603 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf,
-    type: 3}
-  m_PrefabInstance: {fileID: 2083348154}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &614890931
 GameObject:
   m_ObjectHideFlags: 0
@@ -33829,7 +33974,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701545889}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.02, z: 24}
+  m_LocalPosition: {x: 32, y: 0, z: 12}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1697492131}
@@ -38355,6 +38500,172 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779706992}
   m_Mesh: {fileID: 4300094, guid: 8a312a861d188f4459a64acbef7e2716, type: 3}
+--- !u!1 &780370874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 780370875}
+  - component: {fileID: 780370881}
+  - component: {fileID: 780370880}
+  - component: {fileID: 780370879}
+  - component: {fileID: 780370878}
+  - component: {fileID: 780370877}
+  - component: {fileID: 780370876}
+  m_Layer: 22
+  m_Name: Prop_Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &780370875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780370874}
+  m_LocalRotation: {x: -0, y: -0.21297804, z: -0, w: -0.977057}
+  m_LocalPosition: {x: -0.4367, y: 0.802, z: 0.2215}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 352858172}
+  m_Father: {fileID: 307194841}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 384.594, z: 0}
+--- !u!114 &780370876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780370874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fb1519d465cfd428de0f26036edf8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Mode: 4
+  m_SceneName: 
+  m_SceneIndex: 0
+  m_LoadingSceneMode: 0
+  m_LoadingSceneName: Loading
+  m_LoadingSceneIndex: 1
+  m_PersistGameData: 0
+--- !u!114 &780370877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780370874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f991b9f1d4fe5b40bb73e3d9a54a29b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BoxColliders:
+  - {fileID: 780370879}
+  m_CornerObject: {fileID: 1792054534762134, guid: b0c5328a0f7ef8e43be6068b33fa0de9,
+    type: 3}
+--- !u!114 &780370878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780370874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d978487c9d2b68a4d97e32c13e30328f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TooltipName: 
+  m_TooltipAction: 
+  m_InteractableOnStart: 1
+  m_HoldDuration: 0
+  m_OnUsed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 780370876}
+        m_MethodName: Switch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_OnCursorEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnCursorExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &780370879
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780370874}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.06, z: 0.12}
+  m_Center: {x: 0, y: 0.03, z: 0}
+--- !u!23 &780370880
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780370874}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 73dafa491245d68499be3bd775e8a073, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &780370881
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780370874}
+  m_Mesh: {fileID: 4300170, guid: 090aacbf0d73538449debb6816dd5605, type: 3}
 --- !u!1 &783064394
 GameObject:
   m_ObjectHideFlags: 0
@@ -41767,7 +42078,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842903374}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.44, y: 0, z: 0}
+  m_LocalPosition: {x: -6, y: 0, z: 14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 143877054}
@@ -60209,7 +60520,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1825613795}
+    m_TransformParent: {fileID: 2003748521}
     m_Modifications:
     - target: {fileID: 1874634120475592, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
       propertyPath: m_Name
@@ -60217,7 +60528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.057
+      value: 9.451002
       objectReference: {fileID: 0}
     - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -60225,7 +60536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.66
+      value: -12.627004
       objectReference: {fileID: 0}
     - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
       propertyPath: m_LocalRotation.x
@@ -60233,7 +60544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.002448118
+      value: 0.71332216
       objectReference: {fileID: 0}
     - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
       propertyPath: m_LocalRotation.z
@@ -60241,11 +60552,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.999997
+      value: 0.7008364
       objectReference: {fileID: 0}
     - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -60253,7 +60564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0.28100002
+      value: 91.012
       objectReference: {fileID: 0}
     - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -60262,17 +60573,13 @@ PrefabInstance:
     - target: {fileID: 114527767597719066, guid: 4ec3d31339b953f4eb7e015de46ebecf,
         type: 3}
       propertyPath: m_Title
-      value: 'Bridge:
-
-        Logs'
+      value: Bridges
       objectReference: {fileID: 0}
     - target: {fileID: 114527767597719066, guid: 4ec3d31339b953f4eb7e015de46ebecf,
         type: 3}
       propertyPath: m_Info
-      value: 'Running across the bridge will cause it to collapse behind you.
-
-
-        The activator is set with a 2 second delay for a platformer feel.'
+      value: "Running across the bridge will cause them to collapse after a brief
+        delay.\r\n\r\nStone = 0.5s, Log = 2s, Gantry = 3s"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
@@ -84524,7 +84831,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707405646}
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -15.8, y: 0, z: 16.06}
+  m_LocalPosition: {x: 14, y: 0, z: 12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 707241172}
@@ -87251,6 +87558,7 @@ Transform:
   - {fileID: 701545890}
   - {fileID: 1707405647}
   - {fileID: 842903375}
+  - {fileID: 307194841}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -89595,7 +89903,6 @@ Transform:
   - {fileID: 1485952571}
   - {fileID: 601140517}
   - {fileID: 994386488}
-  - {fileID: 1212405894}
   m_Father: {fileID: 2003748521}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97994,16 +98301,17 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003748520}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 2, y: 0, z: -24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 75752459}
   - {fileID: 1825613795}
   - {fileID: 284106799}
+  - {fileID: 1212405894}
   m_Father: {fileID: 1758382257}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &2003985666
 GameObject:
   m_ObjectHideFlags: 0
@@ -101238,84 +101546,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2066714517}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2071203642
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 284106799}
-    m_Modifications:
-    - target: {fileID: 1874634120475592, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_Name
-      value: Prop_InfoPoint (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.057
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.002448118
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.999997
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0.28100002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114527767597719066, guid: 4ec3d31339b953f4eb7e015de46ebecf,
-        type: 3}
-      propertyPath: m_Title
-      value: 'Bridge:
-
-        Gantry'
-      objectReference: {fileID: 0}
-    - target: {fileID: 114527767597719066, guid: 4ec3d31339b953f4eb7e015de46ebecf,
-        type: 3}
-      propertyPath: m_Info
-      value: 'Running across the bridge will cause it to collapse behind you.
-
-
-        The activator is set with a 3 second delay.'
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
---- !u!4 &2071203643 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf,
-    type: 3}
-  m_PrefabInstance: {fileID: 2071203642}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2073120468
 GameObject:
   m_ObjectHideFlags: 0
@@ -102021,78 +102251,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081073410}
   m_Mesh: {fileID: 43210912700751592, guid: 7df1c949ef6d51149bbde87dc915e8a8, type: 2}
---- !u!1001 &2083348154
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 75752459}
-    m_Modifications:
-    - target: {fileID: 1874634120475592, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_Name
-      value: Prop_InfoPoint
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.057
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 7.723
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.002448118
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.999997
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0.28100002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4667598524892884, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114527767597719066, guid: 4ec3d31339b953f4eb7e015de46ebecf,
-        type: 3}
-      propertyPath: m_Title
-      value: 'Bridge:
-
-        Stone Slabs'
-      objectReference: {fileID: 0}
-    - target: {fileID: 114527767597719066, guid: 4ec3d31339b953f4eb7e015de46ebecf,
-        type: 3}
-      propertyPath: m_Info
-      value: 'Running across the bridge will cause it to collapse behind you.
-
-
-        The activator is set with a half second delay.'
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4ec3d31339b953f4eb7e015de46ebecf, type: 3}
 --- !u!1 &2083853375
 GameObject:
   m_ObjectHideFlags: 0
@@ -102545,6 +102703,160 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087957241}
   m_Mesh: {fileID: 43132144746463630, guid: 7df1c949ef6d51149bbde87dc915e8a8, type: 2}
+--- !u!1 &2088588251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2088588253}
+  - component: {fileID: 2088588252}
+  m_Layer: 0
+  m_Name: Readme
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2088588252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088588251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2839908188dba24a926c7bcb0bd79dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Header:
+    image: {fileID: 0}
+    darkSkinImage: {fileID: 0}
+    title: NeoFPS + Rayfire Demos
+  m_Sections:
+  - image: {fileID: 0}
+    h2Heading: 
+    h3Heading: 
+    bulletPoints: []
+    text: 'This integration focuses on 2 areas: weapons and character based destruction'
+    links: []
+    highlightObjects: []
+    actions: []
+  - image: {fileID: 0}
+    h2Heading: Weapons
+    h3Heading: 
+    bulletPoints: []
+    text: The RayfireBulletAmmoEffect is an ammo module for the modular firearm system,
+      which adds rayfire destruction to your guns. The demo assault rifle is set up
+      with this ammo effect and infinite ammo for you to experiment with.
+    links:
+    - text: 'Manual: The Modular Firearm System'
+      url: https://docs.neofps.com/manual/weapons-modular-firearms.html
+    highlightObjects:
+    - text: Demo Assault Rifle Prefab
+      gameObject: {fileID: 6305519205577836760, guid: 902ee559cf958624ba0dd090610a9f4d,
+        type: 3}
+    - text: Rayfire Ammo Effect Script
+      gameObject: {fileID: 11500000, guid: 0b6f5ac0f5055f442a11b41e8cbe4e26, type: 3}
+    actions: []
+  - image: {fileID: 0}
+    h2Heading: 
+    h3Heading: 
+    bulletPoints: []
+    text: The RayfirePooledExplosion adds rayfire destruction to the NeoFPS explosions,
+      allowing you to use them in guns, thrown weapons like grenades, and environmental
+      objects like explosive barrels.
+    links:
+    - text: 'Manual: Explosions'
+      url: https://docs.neofps.com/manual/weapons-explosions.html
+    highlightObjects:
+    - text: Demo Explosion Prefab
+      gameObject: {fileID: 1911362972347452, guid: 3641c3c8f7d2e404a9d6079210082891,
+        type: 3}
+    - text: Demo Grenade Launcher Prefab
+      gameObject: {fileID: 1383170038399969743, guid: c9880f091d39fe74081157b7d40a269e,
+        type: 3}
+    - text: Rayfire Explosion Script
+      gameObject: {fileID: 11500000, guid: 7115a000d60a65e428d15daf9fd76fb3, type: 3}
+    actions: []
+  - image: {fileID: 0}
+    h2Heading: Character Based Destruction
+    h3Heading: 
+    bulletPoints: []
+    text: The demo character is set up with a RayfireMotionControllerAddon component,
+      and a child object with the RayfireCharacterActivator component. The RayfireMotionControllerAddon
+      component allows you to enable or disable rayfire collisions with the character,
+      and adds a wrecking ball style effect that allows you to smash through objects.
+    links: []
+    highlightObjects:
+    - text: Demo Character Prefab
+      gameObject: {fileID: 8213695001475271163, guid: 924b628616dbc2c4a90f8045fa46a7d5,
+        type: 3}
+    - text: RayfireCharacterActivator Script
+      gameObject: {fileID: 11500000, guid: 5dc4b46ae469b524c8d12d8c12076141, type: 3}
+    - text: Motion Controller Addon Script
+      gameObject: {fileID: 11500000, guid: 309b7537dbe0eef41877361c68a94dad, type: 3}
+    actions: []
+  - image: {fileID: 0}
+    h2Heading: 
+    h3Heading: 
+    bulletPoints: []
+    text: The motion graph is set up with a jetpack, a ground based dash/slam that
+      is triggered via the ability key when already on the ground (default is L-Alt)
+      and a ground slam that is triggered via the ability key while airborne. The
+      relevant states trigger the wrecking ball effect using motion graph behaviours.
+      There are also behaviours to enable/disable collisions, and to enable a rayfire
+      activation zone around the player character.
+    links:
+    - text: 'Manual: The Motion Graph'
+      url: https://docs.neofps.com/manual/motiongraph-index.html
+    - text: 'Manual: Motion Graph Behaviours'
+      url: https://docs.neofps.com/manual/motiongraph-behaviours.html
+    highlightObjects:
+    - text: Demo Motion Graph
+      gameObject: {fileID: 11400000, guid: 157511573f8a1b94e9933472a874f94a, type: 2}
+    - text: Activator Motion Graph Behaviour Script
+      gameObject: {fileID: 11500000, guid: 57053b6ee7c17b84e924206ac631de28, type: 3}
+    - text: Collision Motion Graph Behaviour Script
+      gameObject: {fileID: 11500000, guid: eed2afb1e2b3ac74aa6aa6c047a7d96b, type: 3}
+    - text: WreckingBall Motion Graph Behaviour Script
+      gameObject: {fileID: 11500000, guid: b2d4311f5633de64eb6a528dd5e7119b, type: 3}
+    actions: []
+  - image: {fileID: 0}
+    h2Heading: 
+    h3Heading: 
+    bulletPoints: []
+    text: The rayfire activation zone is controlled via the RayfireCharacterActivator.
+      The bridge demos use this to collapse the bridges as you move over them. Each
+      bridge has a trigger zone surrounding it which enables the rayfire activation
+      zone on the character when they enter and disables it when they leave, along
+      with setting its delay.
+    links: []
+    highlightObjects:
+    - text: Bride Demos
+      gameObject: {fileID: 2003748520}
+    - text: Example Trigger Zone
+      gameObject: {fileID: 89173403}
+    - text: Character Trigger Zone Script
+      gameObject: {fileID: 11500000, guid: 905ae3576e8a8ec4f96c9a8af4e52b75, type: 3}
+    actions: []
+--- !u!4 &2088588253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088588251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2089671426
 GameObject:
   m_ObjectHideFlags: 0
