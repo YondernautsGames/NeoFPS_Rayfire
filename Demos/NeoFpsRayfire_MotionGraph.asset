@@ -113,6 +113,7 @@ MonoBehaviour:
   m_GroundInfluence:
     m_Data: {fileID: 114925512283094760}
     m_Value: 0.25
+  m_IgnoreFallSpeed: 1
   m_UseInitialGravity: 1
 --- !u!114 &114003821884054348
 MonoBehaviour:
@@ -143,7 +144,7 @@ MonoBehaviour:
   m_VelocityType: 1
   m_ComparisonType: 4
   m_CompareValue: 5
---- !u!114 &114007063537190022
+--- !u!114 &114008401277459428
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,30 +153,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 198c9389cc522924e9e0132313191c30, type: 3}
-  m_Name: TimeOpsBehaviour
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  m_SerializationKey: 2109602821
-  expanded: 1
-  m_Parameter: {fileID: 114997098723117580}
-  m_What: 3
-  m_Multiplier: 1
---- !u!114 &114009300058031596
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db480744ef4e97a4badb379d2a91e46e, type: 3}
+  m_Script: {fileID: 11500000, guid: a874951dbda4ab741bcdefe7475c587b, type: 3}
   m_Name: Condition Group
   m_EditorClassIdentifier: 
-  m_TimeValue: {fileID: 114997098723117580}
-  m_CompareValue: 0.5
-  m_ComparisonType: 0
+  m_Comparison: 1
 --- !u!114 &114012685883913930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -195,6 +176,7 @@ MonoBehaviour:
   - {fileID: 114829878395084686}
   - {fileID: 114500049402619336}
   - {fileID: 114777741398778884}
+  - {fileID: 114059962919198342}
   m_Behaviours: []
   m_SerializationKey: -181230651
   internalUiPosition: {x: -1, y: -200}
@@ -316,27 +298,6 @@ MonoBehaviour:
     m_ID: 883725646
     m_Connection: {fileID: 114016526211108878}
     collapsed: 0
---- !u!114 &114026017496366024
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d4311f5633de64eb6a528dd5e7119b, type: 3}
-  m_Name: RayfireCharacterWreckingBall
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  m_SerializationKey: 1702875787
-  expanded: 1
-  m_OnEnter: 0
-  m_OnExit: 2
-  m_MaxForce: 25
-  m_Radius: 4
-  m_Offset: 0.1
-  m_RelativeSpeedThreshold: 10
 --- !u!114 &114026105679709088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -373,19 +334,6 @@ MonoBehaviour:
   - {fileID: 114445064025687202}
   m_DefaultEntry: {fileID: 114445064025687202}
 --- !u!114 &114030184177288646
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77d31765eb23c6c4d9a5388e4351abc4, type: 3}
-  m_Name: Condition Group
-  m_EditorClassIdentifier: 
-  m_Property: {fileID: 114081291561956048}
---- !u!114 &114032721211691330
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -466,7 +414,7 @@ MonoBehaviour:
   m_Conditions:
   - {fileID: 114093291114107496}
   m_ConditionGroups: []
---- !u!114 &114056548779087366
+--- !u!114 &114059962919198342
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -475,11 +423,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c11e9bf9d5e62a24a8e0fb9b6a1ca30e, type: 3}
-  m_Name: Condition Group
+  m_Script: {fileID: 11500000, guid: 0004d1c6b38b2974c9780b8be7a26d48, type: 3}
+  m_Name: Connection
   m_EditorClassIdentifier: 
-  m_Result: 0
-  m_Message: 
+  m_Source: {fileID: 114012685883913930}
+  m_Destination: {fileID: 114892523631828452}
+  m_TransitionOn: 0
+  m_Conditions:
+  - {fileID: 114781998294381790}
+  - {fileID: 114008401277459428}
+  - {fileID: 114464479347480946}
+  m_ConditionGroups: []
 --- !u!114 &114061923841123422
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -807,7 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfb8cac9eea7524a81b91bfc0d90712, type: 3}
   m_Name: Steep Slide
   m_EditorClassIdentifier: 
-  uiPosition: {x: 271.5, y: 33}
+  uiPosition: {x: 271.5, y: 32}
   defaultName: NewState
   m_Parent: {fileID: 114444379566419926}
   m_Connections:
@@ -839,25 +793,6 @@ MonoBehaviour:
   m_HorizontalAcceleration:
     m_Data: {fileID: 114428071452674590}
     m_Value: 10
---- !u!114 &114153149501299946
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0004d1c6b38b2974c9780b8be7a26d48, type: 3}
-  m_Name: Connection
-  m_EditorClassIdentifier: 
-  m_Source: {fileID: 114619396592043038}
-  m_Destination: {fileID: 114155929236841502}
-  m_TransitionOn: 0
-  m_Conditions:
-  - {fileID: 114604639593345750}
-  - {fileID: 114761461121363108}
-  m_ConditionGroups: []
 --- !u!114 &114155656199722166
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -890,8 +825,6 @@ MonoBehaviour:
   m_Connections:
   - {fileID: 114511269494460508}
   - {fileID: 114997518604781566}
-  - {fileID: 114323282590896994}
-  - {fileID: 114430573822960844}
   m_Behaviours:
   - {fileID: 114507669261952332}
   m_SerializationKey: -747802859
@@ -946,6 +879,18 @@ MonoBehaviour:
   m_VelocityType: 1
   m_ComparisonType: 2
   m_CompareValue: 5
+--- !u!114 &114166358903575510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eedf3c3827666940a3bf369582ccec2, type: 3}
+  m_Name: Condition Group
+  m_EditorClassIdentifier: 
 --- !u!114 &114169307972953002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1273,7 +1218,7 @@ MonoBehaviour:
   m_LadderTransform: {fileID: 114905015638826116}
   m_SpacingMultiplier: 3
   m_MinimumSpeed: 0.01
---- !u!114 &114217826904855036
+--- !u!114 &114219807013745912
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1282,10 +1227,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77d31765eb23c6c4d9a5388e4351abc4, type: 3}
-  m_Name: Condition Group
+  m_Script: {fileID: 11500000, guid: b2d4311f5633de64eb6a528dd5e7119b, type: 3}
+  m_Name: RayfireCharacterWreckingBall
   m_EditorClassIdentifier: 
-  m_Property: {fileID: 114081291561956048}
+  m_Active: 1
+  m_SerializationKey: 1364090163
+  expanded: 1
+  m_OnEnter: 0
+  m_OnExit: 1
+  m_MaxForce: 25
+  m_Radius: 4
+  m_Offset: 0.1
+  m_RelativeSpeedThreshold: 10
 --- !u!114 &114221604029891296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1361,43 +1314,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Connection: {fileID: 114790714546793838}
   m_ID: 1336807904
---- !u!114 &114249684692711286
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f2fa037aceaf444f90ac7b6dd3e472c, type: 3}
-  m_Name: DirectionalDash
-  m_EditorClassIdentifier: 
-  uiPosition: {x: -374.99982, y: -132.00006}
-  defaultName: NewState
-  m_Parent: {fileID: 114444379566419926}
-  m_Connections:
-  - {fileID: 114341800168653212}
-  m_Behaviours:
-  - {fileID: 114007063537190022}
-  - {fileID: 114026017496366024}
-  m_SerializationKey: 1053417459
-  stateName: 
-  m_DashSpeed:
-    m_Data: {fileID: 0}
-    m_Value: 50
-  m_Acceleration:
-    m_Data: {fileID: 0}
-    m_Value: 0
-  m_DashDistance:
-    m_Data: {fileID: 0}
-    m_Value: 0
-  m_StrafeMultiplier:
-    m_Data: {fileID: 0}
-    m_Value: 0.75
-  m_ReverseMultiplier:
-    m_Data: {fileID: 0}
-    m_Value: 0.5
 --- !u!114 &114250578736595862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1450,27 +1366,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Connection: {fileID: 114016526211108878}
   m_ID: 1820594358
---- !u!114 &114263992275333998
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d4311f5633de64eb6a528dd5e7119b, type: 3}
-  m_Name: RayfireCharacterWreckingBall
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  m_SerializationKey: -1651999211
-  expanded: 1
-  m_OnEnter: 0
-  m_OnExit: 2
-  m_MaxForce: 25
-  m_Radius: 4
-  m_Offset: 0.1
-  m_RelativeSpeedThreshold: 10
 --- !u!114 &114270054431625362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1508,6 +1403,9 @@ MonoBehaviour:
   m_Acceleration:
     m_Data: {fileID: 114497683661720356}
     m_Value: 0
+  m_Deceleration:
+    m_Data: {fileID: 114497683661720356}
+    m_Value: 0
   m_GravityMode: 0
   m_Damping: 0.25
 --- !u!114 &114271958115096186
@@ -1542,18 +1440,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DataID: -828232
   m_Value: 4
---- !u!114 &114288469450599326
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eedf3c3827666940a3bf369582ccec2, type: 3}
-  m_Name: Condition Group
-  m_EditorClassIdentifier: 
 --- !u!114 &114290442154415794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1620,6 +1506,24 @@ MonoBehaviour:
   m_Conditions:
   - {fileID: 114667920448567872}
   m_ConditionGroups: []
+--- !u!114 &114295235306636032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198c9389cc522924e9e0132313191c30, type: 3}
+  m_Name: TimeOpsBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: -1840542251
+  expanded: 1
+  m_Parameter: {fileID: 114997098723117580}
+  m_What: 3
+  m_Multiplier: 1
 --- !u!114 &114296620818436748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1820,6 +1724,7 @@ MonoBehaviour:
   - {fileID: 114410387066723114}
   - {fileID: 114366688399004688}
   - {fileID: 114415549321795566}
+  - {fileID: 114892523631828452}
   m_SubGraphs:
   - {fileID: 114012685883913930}
   m_DefaultEntry: {fileID: 114012685883913930}
@@ -1850,27 +1755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eedf3c3827666940a3bf369582ccec2, type: 3}
   m_Name: Condition
   m_EditorClassIdentifier: 
---- !u!114 &114323282590896994
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0004d1c6b38b2974c9780b8be7a26d48, type: 3}
-  m_Name: Connection
-  m_EditorClassIdentifier: 
-  m_Source: {fileID: 114155929236841502}
-  m_Destination: {fileID: 114249684692711286}
-  m_TransitionOn: 0
-  m_Conditions:
-  - {fileID: 114056548779087366}
-  - {fileID: 114032721211691330}
-  - {fileID: 114009300058031596}
-  - {fileID: 114347909116576312}
-  m_ConditionGroups: []
 --- !u!114 &114323753695376034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1924,6 +1808,9 @@ MonoBehaviour:
     m_Data: {fileID: 0}
     m_Value: 0.5
   m_Acceleration:
+    m_Data: {fileID: 0}
+    m_Value: 50
+  m_Deceleration:
     m_Data: {fileID: 0}
     m_Value: 50
   m_GravityMode: 0
@@ -1993,25 +1880,6 @@ MonoBehaviour:
   m_Conditions:
   - {fileID: 114320227405233898}
   m_ConditionGroups: []
---- !u!114 &114341800168653212
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0004d1c6b38b2974c9780b8be7a26d48, type: 3}
-  m_Name: Connection
-  m_EditorClassIdentifier: 
-  m_Source: {fileID: 114249684692711286}
-  m_Destination: {fileID: 114155929236841502}
-  m_TransitionOn: 1
-  m_Conditions:
-  - {fileID: 114288469450599326}
-  - {fileID: 114624511705096304}
-  m_ConditionGroups: []
 --- !u!114 &114344971231179608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2024,21 +1892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eedf3c3827666940a3bf369582ccec2, type: 3}
   m_Name: Condition Group
   m_EditorClassIdentifier: 
---- !u!114 &114347909116576312
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92a71d56e456c0043845df0293293219, type: 3}
-  m_Name: Condition Group
-  m_EditorClassIdentifier: 
-  m_Compare: 0
-  m_CompareValue: 0.05
-  m_Comparison: 0
 --- !u!114 &114348246455260126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2127,6 +1980,7 @@ MonoBehaviour:
   m_Multiplier:
     m_Data: {fileID: 0}
     m_Value: 1
+  m_BoostMode: 0
 --- !u!114 &114370388126011234
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -2454,24 +2308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DataID: -2879878
   m_Value: 10
---- !u!114 &114430573822960844
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0004d1c6b38b2974c9780b8be7a26d48, type: 3}
-  m_Name: Connection
-  m_EditorClassIdentifier: 
-  m_Source: {fileID: 114155929236841502}
-  m_Destination: {fileID: 114619396592043038}
-  m_TransitionOn: 0
-  m_Conditions:
-  - {fileID: 114217826904855036}
-  m_ConditionGroups: []
 --- !u!114 &114438131698877102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2545,27 +2381,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Connection: {fileID: 114016526211108878}
   m_ID: -2097435558
---- !u!114 &114443303090059450
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d4311f5633de64eb6a528dd5e7119b, type: 3}
-  m_Name: RayfireCharacterWreckingBall
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  m_SerializationKey: 1225197729
-  expanded: 1
-  m_OnEnter: 0
-  m_OnExit: 1
-  m_MaxForce: 25
-  m_Radius: 2
-  m_Offset: 0.1
-  m_RelativeSpeedThreshold: 10
 --- !u!114 &114444379566419926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2596,8 +2411,6 @@ MonoBehaviour:
   m_Container: {fileID: 11400000}
   m_States:
   - {fileID: 114138716543769780}
-  - {fileID: 114249684692711286}
-  - {fileID: 114619396592043038}
   m_SubGraphs:
   - {fileID: 114155929236841502}
   m_DefaultEntry: {fileID: 114155929236841502}
@@ -2698,6 +2511,21 @@ MonoBehaviour:
   m_CompareTo: 0.55
   m_HeightMode: 0
   m_ComparisonType: 4
+--- !u!114 &114464479347480946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db480744ef4e97a4badb379d2a91e46e, type: 3}
+  m_Name: Condition Group
+  m_EditorClassIdentifier: 
+  m_TimeValue: {fileID: 114997098723117580}
+  m_CompareValue: 1
+  m_ComparisonType: 0
 --- !u!114 &114468162450717092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3352,6 +3180,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Property: {fileID: 114296789751003724}
   m_CompareValue: 1
+--- !u!114 &114577621248275644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0004d1c6b38b2974c9780b8be7a26d48, type: 3}
+  m_Name: Connection
+  m_EditorClassIdentifier: 
+  m_Source: {fileID: 114892523631828452}
+  m_Destination: {fileID: 114012685883913930}
+  m_TransitionOn: 0
+  m_Conditions:
+  - {fileID: 114166358903575510}
+  m_ConditionGroups: []
 --- !u!114 &114585306180724988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3370,18 +3216,6 @@ MonoBehaviour:
   m_Parameter: {fileID: 114983638472772042}
   m_OnEnter: 0
   m_OnExit: 1
---- !u!114 &114604639593345750
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eedf3c3827666940a3bf369582ccec2, type: 3}
-  m_Name: Condition Group
-  m_EditorClassIdentifier: 
 --- !u!114 &114617848419764836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3401,52 +3235,6 @@ MonoBehaviour:
   m_When: 0
   m_What: 0
   m_Value: 0
---- !u!114 &114619396592043038
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81e50dd31c13bc04db20ce80942a020e, type: 3}
-  m_Name: Dash
-  m_EditorClassIdentifier: 
-  uiPosition: {x: -376.00012, y: 33.5}
-  defaultName: NewState
-  m_Parent: {fileID: 114444379566419926}
-  m_Connections:
-  - {fileID: 114153149501299946}
-  m_Behaviours:
-  - {fileID: 114263992275333998}
-  m_SerializationKey: 858010277
-  stateName: 
-  m_DashSpeed:
-    m_Data: {fileID: 0}
-    m_Value: 50
-  m_Acceleration:
-    m_Data: {fileID: 0}
-    m_Value: 1000
-  m_DashDistance:
-    m_Data: {fileID: 0}
-    m_Value: 0.1
-  m_FrameOfReference: 0
-  m_DashAngle: 0
---- !u!114 &114624511705096304
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ed7f52d04f4a8748822054d6baa1b4e, type: 3}
-  m_Name: Condition Group
-  m_EditorClassIdentifier: 
-  m_TimeoutProperty: {fileID: 0}
-  m_TimeoutValue: 3
 --- !u!114 &114633102963405122
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -3460,20 +3248,6 @@ MonoBehaviour:
   m_Name: lastGroundingTime
   m_EditorClassIdentifier: 
   m_StartingValue: 0
---- !u!114 &114635624114587450
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f876ce841235e254e91ae0ff1407d9bd, type: 3}
-  m_Name: Condition Group
-  m_EditorClassIdentifier: 
-  m_ComparisonType: 4
-  m_CompareValue: -45
 --- !u!114 &114635883271239062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3842,6 +3616,57 @@ MonoBehaviour:
   m_Parameter: {fileID: 114983638472772042}
   m_OnEnter: 0
   m_OnExit: 2
+--- !u!114 &114737490070375510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4951fc57c9d66834cb02539af56c3f8c, type: 3}
+  m_Name: CameraPulseFoVBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: 1605879563
+  expanded: 1
+  m_When: 0
+  m_FovMultiplier: 0.8
+  m_PulseDuration: 1
+  m_PulseCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114738144366728780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3987,20 +3812,6 @@ MonoBehaviour:
   m_OnExitValue: 1
   m_ResizeDuration: 0.25
   m_FromPoint: 0
---- !u!114 &114761461121363108
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ed7f52d04f4a8748822054d6baa1b4e, type: 3}
-  m_Name: Condition Group
-  m_EditorClassIdentifier: 
-  m_TimeoutProperty: {fileID: 0}
-  m_TimeoutValue: 0.1
 --- !u!114 &114774732334629858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4074,6 +3885,19 @@ MonoBehaviour:
   m_Parameter: {fileID: 114754913999542612}
   m_OnEnter: 0
   m_OnExit: 1
+--- !u!114 &114781998294381790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d31765eb23c6c4d9a5388e4351abc4, type: 3}
+  m_Name: Condition Group
+  m_EditorClassIdentifier: 
+  m_Property: {fileID: 114081291561956048}
 --- !u!114 &114784060160058142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4351,24 +4175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eedf3c3827666940a3bf369582ccec2, type: 3}
   m_Name: Condition Group
   m_EditorClassIdentifier: 
---- !u!114 &114851247717892710
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 198c9389cc522924e9e0132313191c30, type: 3}
-  m_Name: TimeOpsBehaviour
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  m_SerializationKey: -2040890266
-  expanded: 1
-  m_Parameter: {fileID: 114997098723117580}
-  m_What: 3
-  m_Multiplier: 1
 --- !u!114 &114851256576719056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4514,6 +4320,101 @@ MonoBehaviour:
   m_Parameter: {fileID: 114997098723117580}
   m_What: 2
   m_Multiplier: 1
+--- !u!114 &114892523631828452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a3bae01c7a7aa4aa9d79de7c3caa0e, type: 3}
+  m_Name: Dash (Anim Curve)
+  m_EditorClassIdentifier: 
+  uiPosition: {x: -7.500183, y: 226.99988}
+  defaultName: NewState
+  m_Parent: {fileID: 114316048160623644}
+  m_Connections:
+  - {fileID: 114577621248275644}
+  m_Behaviours:
+  - {fileID: 114295235306636032}
+  - {fileID: 114737490070375510}
+  - {fileID: 114219807013745912}
+  m_SerializationKey: -1680710169
+  stateName: 
+  m_DashSpeed:
+    m_Data: {fileID: 0}
+    m_Value: 50
+  m_MaxControlSpeed:
+    m_Data: {fileID: 0}
+    m_Value: 5
+  m_StrafeMultiplier:
+    m_Data: {fileID: 0}
+    m_Value: 0.75
+  m_ReverseMultiplier:
+    m_Data: {fileID: 0}
+    m_Value: 0.5
+  m_Acceleration:
+    m_Data: {fileID: 0}
+    m_Value: 50
+  m_FrameOfReference: 0
+  m_DashAngle: 0
+  m_DashInTime: 0.05
+  m_DashOutTime: 0.5
+  m_DashOutCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.7
+      value: -0.05
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.9
+      value: 0.02
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_ApplyGravity: 1
+  m_ControlDamping: 0.25
 --- !u!114 &114895629510628548
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StartActive: 1
+  m_ActivationMode: 0
   m_PrintableName: 40mm HE
   m_FixedSize: 1
   m_Effect: {fileID: 1342100809698693555}
@@ -85,7 +86,12 @@ PrefabInstance:
     - target: {fileID: 114279086836689452, guid: 629f7d2c2a05c3b4d9df1274a2bebf8c,
         type: 3}
       propertyPath: m_MaxForce
-      value: 10
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114279086836689452, guid: 629f7d2c2a05c3b4d9df1274a2bebf8c,
+        type: 3}
+      propertyPath: m_Damage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114698644382932926, guid: 629f7d2c2a05c3b4d9df1274a2bebf8c,
         type: 3}

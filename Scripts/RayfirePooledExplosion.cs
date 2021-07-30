@@ -28,6 +28,7 @@ namespace NeoFPS.Rayfire
 
         [SerializeField, Tooltip("Should the explosion affect kinematic rayfire rigidbodies? If so, then they will be switched to dynamic if the rayfire rigid allows it")]
         public bool m_AffectKinematic = false;
+
         [SerializeField, Range(0f, 1f), Tooltip("The amount of random rotation to add to the rayfire rigidbodies affected")]
         public float m_Chaos = 0.5f;
 
@@ -41,46 +42,47 @@ namespace NeoFPS.Rayfire
             m_RayfireRigidbodies.Clear();
         }
 
-        protected override void ApplyExplosionEffect(RaycastHit hit, Vector3 center, float maxDamage, float maxForce)
+        protected override void ApplyExplosionForceEffect(ImpactHandlerInfo info, Vector3 explosionCenter, float maxForce)
         {
+            Debug.Log("Adding explosion force");
+
             // Check for rayfire rigid
-            RayfireRigid rigid = hit.collider.attachedRigidbody == null
-                ? hit.collider.GetComponent<RayfireRigid>()
-                : hit.collider.attachedRigidbody.transform.GetComponent<RayfireRigid>();
+            var rigidbody = info.collider.attachedRigidbody;
+            RayfireRigid rayfireRB = rigidbody == null
+                ? info.collider.GetComponent<RayfireRigid>()
+                : rigidbody.transform.GetComponent<RayfireRigid>();
 
-            if (rigid != null)
+            if (rayfireRB != null)
             {
-                m_RayfireRigidbodies.Add(rigid);
+                m_RayfireRigidbodies.Add(rayfireRB);
 
-                float falloff = 1f - Mathf.Clamp01(hit.distance / radius);
-
-                if (rigid.activation.byImpact)
-                    rigid.Activate();
+                if (rayfireRB.activation.byImpact)
+                    rayfireRB.Activate();
 
                 // Apply damage
-                if (rigid.damage.enable == true)
-                    rigid.ApplyDamage(maxDamage * falloff, hit.point);
+                if (rayfireRB.damage.enable == true)
+                    rayfireRB.ApplyDamage(maxDamage * info.falloff, explosionCenter);
 
                 // Apply force
-                if (hit.rigidbody != null)
+                if (rigidbody != null)
                 {
                     // Affect Kinematic
-                    SetKinematic(rigid, hit.rigidbody);
+                    SetKinematic(rayfireRB, rigidbody);
 
                     // Add explosion force
-                    hit.rigidbody.AddExplosionForce(maxForce, hit.point, radius, 0.25f, ForceMode.Impulse);
+                    rigidbody.AddExplosionForce(maxForce, explosionCenter, radius, 0.25f, ForceMode.Impulse);
 
                     // Get local rotation strength 
                     if (m_Chaos > 0.01f)
                     {
-                        float chaos = falloff * m_Chaos * 90f;
+                        float chaos = info.falloff * m_Chaos * 90f;
                         Vector3 rot = new Vector3(Random.Range(-chaos, chaos), Random.Range(-chaos, chaos), Random.Range(-chaos, chaos));
-                        hit.rigidbody.angularVelocity = rot;
+                        rigidbody.angularVelocity = rot;
                     }
                 }
             }
             else
-                base.ApplyExplosionEffect(hit, center, maxDamage, maxForce);
+                base.ApplyExplosionForceEffect(info, explosionCenter, maxForce);
         }
 
         // Explode kinematic objects

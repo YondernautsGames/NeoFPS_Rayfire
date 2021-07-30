@@ -138,6 +138,11 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 54284900150313124, guid: 2345fa8f7cb306c499e81465ce9c1bd8,
+        type: 3}
+      propertyPath: m_Mass
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 114012715847808828, guid: 2345fa8f7cb306c499e81465ce9c1bd8,
         type: 3}
       propertyPath: m_ApplyFallDamage
@@ -296,6 +301,26 @@ PrefabInstance:
         type: 3}
       propertyPath: prefabGuid
       value: 2345fa8f7cb306c499e81465ce9c1bd8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114494700223802258, guid: 2345fa8f7cb306c499e81465ce9c1bd8,
+        type: 3}
+      propertyPath: m_ForceMultiplier
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114494700223802258, guid: 2345fa8f7cb306c499e81465ce9c1bd8,
+        type: 3}
+      propertyPath: m_MaxForce
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114558082525576610, guid: 2345fa8f7cb306c499e81465ce9c1bd8,
+        type: 3}
+      propertyPath: m_ForceMultiplier
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114558082525576610, guid: 2345fa8f7cb306c499e81465ce9c1bd8,
+        type: 3}
+      propertyPath: m_MaxForce
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 114660341047048418, guid: 2345fa8f7cb306c499e81465ce9c1bd8,
         type: 3}

@@ -28495,13 +28495,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dae403a59cd85344ab1c214fcc3ccef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 1.2452326, y: 1.8279705, z: 8.712935}
+  unyielding: 1
+  activatable: 0
+  simulationType: 1
   centerPosition: {x: 6.453081, y: 0.61826086, z: -0.1594963}
+  size: {x: 1.2452326, y: 1.8279705, z: 8.712935}
+  connHost: {fileID: 0}
+  rigidHost: {fileID: 0}
   rigidList: []
-  initialized: 0
+  shardList: []
   showGizmo: 1
   showCenter: 0
-  initialize: 3
+  id: 0
 --- !u!114 &601140519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28514,13 +28519,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dae403a59cd85344ab1c214fcc3ccef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 1.3212738, y: 1.6734416, z: 9.472891}
+  unyielding: 1
+  activatable: 0
+  simulationType: 1
   centerPosition: {x: -6.6855445, y: 0.53659916, z: -0.1594963}
+  size: {x: 1.3212738, y: 1.6734416, z: 9.472891}
+  connHost: {fileID: 0}
+  rigidHost: {fileID: 0}
   rigidList: []
-  initialized: 0
+  shardList: []
   showGizmo: 1
   showCenter: 1
-  initialize: 3
+  id: 0
 --- !u!114 &601140520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28540,17 +28550,38 @@ MonoBehaviour:
   seed: 0
   clusterize: 1
   demolishable: 1
+  startCollapse: 3
+  collapseByIntegrity: 50
   collapse:
     type: 1
     start: 0
     end: 75
     steps: 10
     duration: 15
+  startStress: 3
+  stressByIntegrity: 70
+  stress:
+    enable: 0
+    threshold: 100
+    erosion: 1
+    interval: 1
+    support: 45
+    exposed: 0
+    bySize: 0
+    strShards: []
+    supShards: []
+    rotCache: {x: 0, y: 0, z: 0}
+    grvCache: {x: 0, y: 0, z: 0}
+    supCache: 0
+    sizeCache: 0
+    initialized: 0
   showConnections: 1
   showNodes: 1
-  checkConnectivity: 0
-  checkNeed: 0
+  showStress: 0
   showGizmo: 1
+  checkConnectivity: 0
+  connectivityCheckNeed: 0
+  unyList: []
   rigidList: []
   cluster:
     id: 1
@@ -28558,6 +28589,7 @@ MonoBehaviour:
     depth: 0
     pos: {x: 0, y: 0.94999695, z: -16}
     rot: {x: 0, y: 0, z: 0, w: 0}
+    scl: {x: 0, y: 0, z: 0}
     bound:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 0, y: 0, z: 0}
@@ -28572,6 +28604,8 @@ MonoBehaviour:
     maximumSize: 4.1613393
     randomCollapse: 0
     randomSeed: 0
+  initShardAmount: 0
+  clsCount: 0
 --- !u!114 &601140521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28594,13 +28628,15 @@ MonoBehaviour:
     massBy: 0
     mass: 1
     colliderType: 0
+    planarCheck: 1
+    ignoreNear: 0
     useGravity: 1
+    solverIterations: 6
     dampening: 0.8
     rigidBody: {fileID: 0}
     meshCollider: {fileID: 0}
     clusterColliders: []
-    position: {x: 0, y: 0, z: 0}
-    initPosition: {x: 0, y: 0, z: 0}
+    ignoreList: 
   activation:
     byVelocity: 0
     byOffset: 0.2
@@ -28610,8 +28646,11 @@ MonoBehaviour:
     byConnectivity: 1
     unyielding: 0
     activatable: 1
+    layer: 
   limitations:
+    byCollision: 1
     solidity: 0.1
+    tag: 
     depth: 1
     time: 0.2
     size: 0.1
@@ -28627,6 +28666,7 @@ MonoBehaviour:
     contactBias: 0
     seed: 1
     useShatter: 0
+    clusterize: 0
     meshInput: 9
     properties:
       colliderType: 0
@@ -28672,6 +28712,7 @@ MonoBehaviour:
       depth: 0
       pos: {x: 0, y: 0, z: 0}
       rot: {x: 0, y: 0, z: 0, w: 0}
+      scl: {x: 0, y: 0, z: 0}
       bound:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
@@ -28689,11 +28730,14 @@ MonoBehaviour:
     minorClusters: []
     cn: 0
     nd: 0
+    am: 0
   referenceDemolition:
     reference: {fileID: 0}
     randomList: []
+    action: 0
     addRigid: 1
     inheritScale: 1
+    inheritMaterials: 0
   materials:
     innerMaterial: {fileID: 0}
     mappingScale: 0.1
@@ -28708,6 +28752,7 @@ MonoBehaviour:
   fading:
     onDemolition: 1
     onActivation: 0
+    byOffset: 0
     lifeType: 4
     lifeTime: 7
     lifeVariation: 3
@@ -28717,11 +28762,11 @@ MonoBehaviour:
   reset:
     transform: 1
     damage: 1
+    connectivity: 0
     action: 0
     destroyDelay: 1
     mesh: 4
     fragments: 0
-    shards: 0
   initialized: 0
   meshes: []
   pivots: []
@@ -32548,13 +32593,15 @@ MonoBehaviour:
     massBy: 0
     mass: 1
     colliderType: 0
+    planarCheck: 1
+    ignoreNear: 0
     useGravity: 1
+    solverIterations: 6
     dampening: 0.8
     rigidBody: {fileID: 0}
     meshCollider: {fileID: 0}
     clusterColliders: []
-    position: {x: 0, y: 0, z: 0}
-    initPosition: {x: 0, y: 0, z: 0}
+    ignoreList: 
   activation:
     byVelocity: 0
     byOffset: 0.2
@@ -32564,8 +32611,11 @@ MonoBehaviour:
     byConnectivity: 1
     unyielding: 0
     activatable: 1
+    layer: 
   limitations:
+    byCollision: 1
     solidity: 0.1
+    tag: 
     depth: 1
     time: 0.2
     size: 0.1
@@ -32581,6 +32631,7 @@ MonoBehaviour:
     contactBias: 0
     seed: 1
     useShatter: 0
+    clusterize: 0
     meshInput: 9
     properties:
       colliderType: 0
@@ -32626,6 +32677,7 @@ MonoBehaviour:
       depth: 0
       pos: {x: 0, y: 0, z: 0}
       rot: {x: 0, y: 0, z: 0, w: 0}
+      scl: {x: 0, y: 0, z: 0}
       bound:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
@@ -32643,11 +32695,14 @@ MonoBehaviour:
     minorClusters: []
     cn: 0
     nd: 0
+    am: 0
   referenceDemolition:
     reference: {fileID: 0}
     randomList: []
+    action: 0
     addRigid: 1
     inheritScale: 1
+    inheritMaterials: 0
   materials:
     innerMaterial: {fileID: 0}
     mappingScale: 0.1
@@ -32662,6 +32717,7 @@ MonoBehaviour:
   fading:
     onDemolition: 1
     onActivation: 0
+    byOffset: 0
     lifeType: 4
     lifeTime: 7
     lifeVariation: 3
@@ -32671,11 +32727,11 @@ MonoBehaviour:
   reset:
     transform: 1
     damage: 1
+    connectivity: 0
     action: 0
     destroyDelay: 1
     mesh: 4
     fragments: 0
-    shards: 0
   initialized: 0
   meshes: []
   pivots: []
@@ -32712,17 +32768,38 @@ MonoBehaviour:
   seed: 0
   clusterize: 1
   demolishable: 1
+  startCollapse: 3
+  collapseByIntegrity: 50
   collapse:
     type: 1
     start: 0
     end: 75
     steps: 10
     duration: 15
+  startStress: 3
+  stressByIntegrity: 70
+  stress:
+    enable: 0
+    threshold: 100
+    erosion: 1
+    interval: 1
+    support: 45
+    exposed: 0
+    bySize: 0
+    strShards: []
+    supShards: []
+    rotCache: {x: 0, y: 0, z: 0}
+    grvCache: {x: 0, y: 0, z: 0}
+    supCache: 0
+    sizeCache: 0
+    initialized: 0
   showConnections: 1
   showNodes: 1
-  checkConnectivity: 0
-  checkNeed: 0
+  showStress: 0
   showGizmo: 1
+  checkConnectivity: 0
+  connectivityCheckNeed: 0
+  unyList: []
   rigidList: []
   cluster:
     id: -1
@@ -32730,6 +32807,7 @@ MonoBehaviour:
     depth: 0
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: 0, z: 0, w: 0}
+    scl: {x: 0, y: 0, z: 0}
     bound:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 0, y: 0, z: 0}
@@ -32744,6 +32822,8 @@ MonoBehaviour:
     maximumSize: 0
     randomCollapse: 0
     randomSeed: 0
+  initShardAmount: 0
+  clsCount: 0
 --- !u!114 &669526967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32756,13 +32836,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dae403a59cd85344ab1c214fcc3ccef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 1, y: 1, z: 5.2001777}
+  unyielding: 1
+  activatable: 0
+  simulationType: 1
   centerPosition: {x: 3.8594856, y: 0, z: -0.1594963}
+  size: {x: 1, y: 1, z: 5.2001777}
+  connHost: {fileID: 0}
+  rigidHost: {fileID: 0}
   rigidList: []
-  initialized: 0
+  shardList: []
   showGizmo: 1
   showCenter: 1
-  initialize: 3
+  id: 0
 --- !u!114 &669526968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32775,13 +32860,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dae403a59cd85344ab1c214fcc3ccef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 1, y: 1, z: 5.2001777}
+  unyielding: 1
+  activatable: 0
+  simulationType: 1
   centerPosition: {x: -4.29839, y: 0, z: -0.1594963}
+  size: {x: 1, y: 1, z: 5.2001777}
+  connHost: {fileID: 0}
+  rigidHost: {fileID: 0}
   rigidList: []
-  initialized: 0
+  shardList: []
   showGizmo: 1
   showCenter: 0
-  initialize: 3
+  id: 0
 --- !u!1 &669815653
 GameObject:
   m_ObjectHideFlags: 0
@@ -34297,13 +34387,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dae403a59cd85344ab1c214fcc3ccef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 9.205475, y: 1, z: 5.2001777}
+  unyielding: 1
+  activatable: 0
+  simulationType: 1
   centerPosition: {x: 0, y: 0, z: 0}
+  size: {x: 9.205475, y: 1, z: 5.2001777}
+  connHost: {fileID: 0}
+  rigidHost: {fileID: 0}
   rigidList: []
-  initialized: 0
+  shardList: []
   showGizmo: 1
   showCenter: 0
-  initialize: 3
+  id: 0
 --- !u!114 &701545893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34323,17 +34418,38 @@ MonoBehaviour:
   seed: 0
   clusterize: 1
   demolishable: 1
+  startCollapse: 3
+  collapseByIntegrity: 50
   collapse:
     type: 1
     start: 0
     end: 75
     steps: 10
     duration: 15
+  startStress: 3
+  stressByIntegrity: 70
+  stress:
+    enable: 0
+    threshold: 100
+    erosion: 1
+    interval: 1
+    support: 45
+    exposed: 0
+    bySize: 0
+    strShards: []
+    supShards: []
+    rotCache: {x: 0, y: 0, z: 0}
+    grvCache: {x: 0, y: 0, z: 0}
+    supCache: 0
+    sizeCache: 0
+    initialized: 0
   showConnections: 1
   showNodes: 1
-  checkConnectivity: 0
-  checkNeed: 0
+  showStress: 0
   showGizmo: 1
+  checkConnectivity: 0
+  connectivityCheckNeed: 0
+  unyList: []
   rigidList: []
   cluster:
     id: -1
@@ -34341,6 +34457,7 @@ MonoBehaviour:
     depth: 0
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: 0, z: 0, w: 0}
+    scl: {x: 0, y: 0, z: 0}
     bound:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 0, y: 0, z: 0}
@@ -34355,6 +34472,8 @@ MonoBehaviour:
     maximumSize: 0
     randomCollapse: 0
     randomSeed: 0
+  initShardAmount: 0
+  clsCount: 0
 --- !u!114 &701545894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34377,13 +34496,15 @@ MonoBehaviour:
     massBy: 0
     mass: 1
     colliderType: 0
+    planarCheck: 1
+    ignoreNear: 0
     useGravity: 1
+    solverIterations: 6
     dampening: 0.8
     rigidBody: {fileID: 0}
     meshCollider: {fileID: 0}
     clusterColliders: []
-    position: {x: 0, y: 0, z: 0}
-    initPosition: {x: 0, y: 0, z: 0}
+    ignoreList: 
   activation:
     byVelocity: 0
     byOffset: 0.2
@@ -34393,8 +34514,11 @@ MonoBehaviour:
     byConnectivity: 1
     unyielding: 0
     activatable: 1
+    layer: 
   limitations:
+    byCollision: 1
     solidity: 0.1
+    tag: 
     depth: 1
     time: 0.2
     size: 0.1
@@ -34410,6 +34534,7 @@ MonoBehaviour:
     contactBias: 0
     seed: 1
     useShatter: 0
+    clusterize: 0
     meshInput: 9
     properties:
       colliderType: 0
@@ -34455,6 +34580,7 @@ MonoBehaviour:
       depth: 0
       pos: {x: 0, y: 0, z: 0}
       rot: {x: 0, y: 0, z: 0, w: 0}
+      scl: {x: 0, y: 0, z: 0}
       bound:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
@@ -34472,11 +34598,14 @@ MonoBehaviour:
     minorClusters: []
     cn: 0
     nd: 0
+    am: 0
   referenceDemolition:
     reference: {fileID: 0}
     randomList: []
+    action: 0
     addRigid: 1
     inheritScale: 1
+    inheritMaterials: 0
   materials:
     innerMaterial: {fileID: 0}
     mappingScale: 0.1
@@ -34491,6 +34620,7 @@ MonoBehaviour:
   fading:
     onDemolition: 1
     onActivation: 0
+    byOffset: 0
     lifeType: 4
     lifeTime: 7
     lifeVariation: 3
@@ -34500,11 +34630,11 @@ MonoBehaviour:
   reset:
     transform: 1
     damage: 1
+    connectivity: 0
     action: 0
     destroyDelay: 1
     mesh: 4
     fragments: 0
-    shards: 0
   initialized: 0
   meshes: []
   pivots: []
@@ -42339,13 +42469,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dae403a59cd85344ab1c214fcc3ccef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 8.1453, y: 1, z: 9.183994}
+  unyielding: 1
+  activatable: 0
+  simulationType: 1
   centerPosition: {x: 0, y: 0, z: 0}
+  size: {x: 8.1453, y: 1, z: 9.183994}
+  connHost: {fileID: 0}
+  rigidHost: {fileID: 0}
   rigidList: []
-  initialized: 0
+  shardList: []
   showGizmo: 1
   showCenter: 0
-  initialize: 3
+  id: 0
 --- !u!114 &842903377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42365,17 +42500,38 @@ MonoBehaviour:
   seed: 0
   clusterize: 1
   demolishable: 1
+  startCollapse: 3
+  collapseByIntegrity: 50
   collapse:
     type: 1
     start: 0
     end: 75
     steps: 10
     duration: 15
+  startStress: 3
+  stressByIntegrity: 70
+  stress:
+    enable: 0
+    threshold: 100
+    erosion: 1
+    interval: 1
+    support: 45
+    exposed: 0
+    bySize: 0
+    strShards: []
+    supShards: []
+    rotCache: {x: 0, y: 0, z: 0}
+    grvCache: {x: 0, y: 0, z: 0}
+    supCache: 0
+    sizeCache: 0
+    initialized: 0
   showConnections: 1
   showNodes: 0
-  checkConnectivity: 0
-  checkNeed: 0
+  showStress: 0
   showGizmo: 0
+  checkConnectivity: 0
+  connectivityCheckNeed: 0
+  unyList: []
   rigidList: []
   cluster:
     id: -1
@@ -42383,6 +42539,7 @@ MonoBehaviour:
     depth: 0
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: 0, z: 0, w: 0}
+    scl: {x: 0, y: 0, z: 0}
     bound:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 0, y: 0, z: 0}
@@ -42397,6 +42554,8 @@ MonoBehaviour:
     maximumSize: 0
     randomCollapse: 0
     randomSeed: 0
+  initShardAmount: 0
+  clsCount: 0
 --- !u!114 &842903378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42461,6 +42620,7 @@ MonoBehaviour:
   rendering:
     castShadows: 1
     receiveShadows: 1
+    lightProbes: 0
   rigid: {fileID: 0}
   pSystem: {fileID: 0}
   hostTm: {fileID: 0}
@@ -42534,6 +42694,7 @@ MonoBehaviour:
   rendering:
     castShadows: 1
     receiveShadows: 1
+    lightProbes: 0
   rigid: {fileID: 0}
   pSystem: {fileID: 0}
   hostTm: {fileID: 0}
@@ -42563,13 +42724,15 @@ MonoBehaviour:
     massBy: 0
     mass: 1
     colliderType: 0
+    planarCheck: 1
+    ignoreNear: 0
     useGravity: 1
+    solverIterations: 6
     dampening: 0.8
     rigidBody: {fileID: 0}
     meshCollider: {fileID: 0}
     clusterColliders: []
-    position: {x: 0, y: 0, z: 0}
-    initPosition: {x: 0, y: 0, z: 0}
+    ignoreList: 
   activation:
     byVelocity: 0
     byOffset: 0.2
@@ -42579,8 +42742,11 @@ MonoBehaviour:
     byConnectivity: 1
     unyielding: 0
     activatable: 1
+    layer: 
   limitations:
+    byCollision: 1
     solidity: 0.5
+    tag: 
     depth: 1
     time: 0.2
     size: 0.1
@@ -42596,6 +42762,7 @@ MonoBehaviour:
     contactBias: 0
     seed: 1
     useShatter: 0
+    clusterize: 0
     meshInput: 9
     properties:
       colliderType: 0
@@ -42641,6 +42808,7 @@ MonoBehaviour:
       depth: 0
       pos: {x: 0, y: 0, z: 0}
       rot: {x: 0, y: 0, z: 0, w: 0}
+      scl: {x: 0, y: 0, z: 0}
       bound:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
@@ -42658,11 +42826,14 @@ MonoBehaviour:
     minorClusters: []
     cn: 0
     nd: 0
+    am: 0
   referenceDemolition:
     reference: {fileID: 0}
     randomList: []
+    action: 0
     addRigid: 1
     inheritScale: 1
+    inheritMaterials: 0
   materials:
     innerMaterial: {fileID: 0}
     mappingScale: 0.1
@@ -42677,6 +42848,7 @@ MonoBehaviour:
   fading:
     onDemolition: 1
     onActivation: 0
+    byOffset: 0
     lifeType: 4
     lifeTime: 7
     lifeVariation: 3
@@ -42686,11 +42858,11 @@ MonoBehaviour:
   reset:
     transform: 1
     damage: 1
+    connectivity: 0
     action: 0
     destroyDelay: 1
     mesh: 4
     fragments: 0
-    shards: 0
   initialized: 0
   meshes: []
   pivots: []
@@ -85221,6 +85393,7 @@ MonoBehaviour:
   rendering:
     castShadows: 1
     receiveShadows: 1
+    lightProbes: 0
   rigid: {fileID: 0}
   pSystem: {fileID: 0}
   hostTm: {fileID: 0}
@@ -85294,6 +85467,7 @@ MonoBehaviour:
   rendering:
     castShadows: 1
     receiveShadows: 1
+    lightProbes: 0
   rigid: {fileID: 0}
   pSystem: {fileID: 0}
   hostTm: {fileID: 0}
@@ -85320,17 +85494,38 @@ MonoBehaviour:
   seed: 4
   clusterize: 1
   demolishable: 1
+  startCollapse: 3
+  collapseByIntegrity: 50
   collapse:
     type: 1
     start: 0
     end: 75
     steps: 10
     duration: 15
+  startStress: 3
+  stressByIntegrity: 70
+  stress:
+    enable: 0
+    threshold: 100
+    erosion: 1
+    interval: 1
+    support: 45
+    exposed: 0
+    bySize: 0
+    strShards: []
+    supShards: []
+    rotCache: {x: 0, y: 0, z: 0}
+    grvCache: {x: 0, y: 0, z: 0}
+    supCache: 0
+    sizeCache: 0
+    initialized: 0
   showConnections: 0
   showNodes: 0
-  checkConnectivity: 0
-  checkNeed: 0
+  showStress: 0
   showGizmo: 0
+  checkConnectivity: 0
+  connectivityCheckNeed: 0
+  unyList: []
   rigidList: []
   cluster:
     id: -1
@@ -85338,6 +85533,7 @@ MonoBehaviour:
     depth: 0
     pos: {x: 0, y: 0, z: 0}
     rot: {x: 0, y: 0, z: 0, w: 0}
+    scl: {x: 0, y: 0, z: 0}
     bound:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 0, y: 0, z: 0}
@@ -85352,6 +85548,8 @@ MonoBehaviour:
     maximumSize: 0
     randomCollapse: 0
     randomSeed: 0
+  initShardAmount: 0
+  clsCount: 0
 --- !u!114 &1707405651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85374,13 +85572,15 @@ MonoBehaviour:
     massBy: 0
     mass: 1
     colliderType: 0
+    planarCheck: 1
+    ignoreNear: 0
     useGravity: 1
+    solverIterations: 6
     dampening: 0.8
     rigidBody: {fileID: 0}
     meshCollider: {fileID: 0}
     clusterColliders: []
-    position: {x: 0, y: 0, z: 0}
-    initPosition: {x: 0, y: 0, z: 0}
+    ignoreList: 
   activation:
     byVelocity: 0
     byOffset: 0.1
@@ -85390,8 +85590,11 @@ MonoBehaviour:
     byConnectivity: 1
     unyielding: 0
     activatable: 1
+    layer: 
   limitations:
+    byCollision: 1
     solidity: 0.1
+    tag: 
     depth: 1
     time: 0.2
     size: 0.1
@@ -85407,6 +85610,7 @@ MonoBehaviour:
     contactBias: 0
     seed: 1
     useShatter: 0
+    clusterize: 0
     meshInput: 9
     properties:
       colliderType: 0
@@ -85452,6 +85656,7 @@ MonoBehaviour:
       depth: 0
       pos: {x: 0, y: 0, z: 0}
       rot: {x: 0, y: 0, z: 0, w: 0}
+      scl: {x: 0, y: 0, z: 0}
       bound:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
@@ -85469,11 +85674,14 @@ MonoBehaviour:
     minorClusters: []
     cn: 0
     nd: 0
+    am: 0
   referenceDemolition:
     reference: {fileID: 0}
     randomList: []
+    action: 0
     addRigid: 1
     inheritScale: 1
+    inheritMaterials: 0
   materials:
     innerMaterial: {fileID: 0}
     mappingScale: 0.1
@@ -85488,6 +85696,7 @@ MonoBehaviour:
   fading:
     onDemolition: 1
     onActivation: 0
+    byOffset: 0
     lifeType: 4
     lifeTime: 7
     lifeVariation: 3
@@ -85497,11 +85706,11 @@ MonoBehaviour:
   reset:
     transform: 1
     damage: 1
+    connectivity: 0
     action: 0
     destroyDelay: 1
     mesh: 4
     fragments: 0
-    shards: 0
   initialized: 0
   meshes: []
   pivots: []
@@ -85531,13 +85740,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dae403a59cd85344ab1c214fcc3ccef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 2.12362, y: 2.750964, z: 1.5008278}
+  unyielding: 1
+  activatable: 0
+  simulationType: 1
   centerPosition: {x: 2.5525823, y: 1.0765251, z: -5.0827227}
+  size: {x: 2.12362, y: 2.750964, z: 1.5008278}
+  connHost: {fileID: 0}
+  rigidHost: {fileID: 0}
   rigidList: []
-  initialized: 0
+  shardList: []
   showGizmo: 1
   showCenter: 0
-  initialize: 3
+  id: 0
 --- !u!114 &1707405653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85550,13 +85764,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dae403a59cd85344ab1c214fcc3ccef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 2.12362, y: 2.750964, z: 1.5008278}
+  unyielding: 1
+  activatable: 0
+  simulationType: 1
   centerPosition: {x: -2.6593246, y: 1.0765251, z: 0.18021035}
+  size: {x: 2.12362, y: 2.750964, z: 1.5008278}
+  connHost: {fileID: 0}
+  rigidHost: {fileID: 0}
   rigidList: []
-  initialized: 0
+  shardList: []
   showGizmo: 1
   showCenter: 0
-  initialize: 3
+  id: 0
 --- !u!1 &1708667511
 GameObject:
   m_ObjectHideFlags: 0
@@ -93706,13 +93925,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dae403a59cd85344ab1c214fcc3ccef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 1.2452326, y: 1.6896062, z: 2.5345488}
+  unyielding: 1
+  activatable: 0
+  simulationType: 1
   centerPosition: {x: 6.2618074, y: 0.45811415, z: -0.1594963}
+  size: {x: 1.2452326, y: 1.6896062, z: 2.5345488}
+  connHost: {fileID: 0}
+  rigidHost: {fileID: 0}
   rigidList: []
-  initialized: 0
+  shardList: []
   showGizmo: 1
   showCenter: 1
-  initialize: 3
+  id: 0
 --- !u!114 &1914104518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93725,13 +93949,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dae403a59cd85344ab1c214fcc3ccef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 1.3212738, y: 1.8710513, z: 2.3435051}
+  unyielding: 1
+  activatable: 0
+  simulationType: 1
   centerPosition: {x: -5.795103, y: 0.35544157, z: -0.1594963}
+  size: {x: 1.3212738, y: 1.8710513, z: 2.3435051}
+  connHost: {fileID: 0}
+  rigidHost: {fileID: 0}
   rigidList: []
-  initialized: 0
+  shardList: []
   showGizmo: 1
   showCenter: 0
-  initialize: 3
+  id: 0
 --- !u!114 &1914104519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93751,17 +93980,38 @@ MonoBehaviour:
   seed: 0
   clusterize: 1
   demolishable: 1
+  startCollapse: 3
+  collapseByIntegrity: 50
   collapse:
     type: 1
     start: 0
     end: 75
     steps: 10
     duration: 15
+  startStress: 3
+  stressByIntegrity: 70
+  stress:
+    enable: 0
+    threshold: 100
+    erosion: 1
+    interval: 1
+    support: 45
+    exposed: 0
+    bySize: 0
+    strShards: []
+    supShards: []
+    rotCache: {x: 0, y: 0, z: 0}
+    grvCache: {x: 0, y: 0, z: 0}
+    supCache: 0
+    sizeCache: 0
+    initialized: 0
   showConnections: 1
   showNodes: 1
-  checkConnectivity: 0
-  checkNeed: 0
+  showStress: 0
   showGizmo: 1
+  checkConnectivity: 0
+  connectivityCheckNeed: 0
+  unyList: []
   rigidList: []
   cluster:
     id: 1
@@ -93769,6 +94019,7 @@ MonoBehaviour:
     depth: 0
     pos: {x: 0.474, y: 2, z: -32}
     rot: {x: 0, y: 0, z: 0, w: 0}
+    scl: {x: 0, y: 0, z: 0}
     bound:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 0, y: 0, z: 0}
@@ -93783,6 +94034,8 @@ MonoBehaviour:
     maximumSize: 3.8831525
     randomCollapse: 0
     randomSeed: 0
+  initShardAmount: 0
+  clsCount: 0
 --- !u!114 &1914104520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93805,13 +94058,15 @@ MonoBehaviour:
     massBy: 1
     mass: 75
     colliderType: 4
+    planarCheck: 1
+    ignoreNear: 0
     useGravity: 1
+    solverIterations: 6
     dampening: 0.8
     rigidBody: {fileID: 0}
     meshCollider: {fileID: 0}
     clusterColliders: []
-    position: {x: 0, y: 0, z: 0}
-    initPosition: {x: 0, y: 0, z: 0}
+    ignoreList: 
   activation:
     byVelocity: 0
     byOffset: 0.2
@@ -93821,8 +94076,11 @@ MonoBehaviour:
     byConnectivity: 1
     unyielding: 0
     activatable: 1
+    layer: 
   limitations:
+    byCollision: 1
     solidity: 0.1
+    tag: 
     depth: 1
     time: 0.2
     size: 0.1
@@ -93838,6 +94096,7 @@ MonoBehaviour:
     contactBias: 0
     seed: 1
     useShatter: 0
+    clusterize: 0
     meshInput: 9
     properties:
       colliderType: 0
@@ -93883,6 +94142,7 @@ MonoBehaviour:
       depth: 0
       pos: {x: 0, y: 0, z: 0}
       rot: {x: 0, y: 0, z: 0, w: 0}
+      scl: {x: 0, y: 0, z: 0}
       bound:
         m_Center: {x: 0, y: 0, z: 0}
         m_Extent: {x: 0, y: 0, z: 0}
@@ -93900,11 +94160,14 @@ MonoBehaviour:
     minorClusters: []
     cn: 0
     nd: 0
+    am: 0
   referenceDemolition:
     reference: {fileID: 0}
     randomList: []
+    action: 0
     addRigid: 1
     inheritScale: 1
+    inheritMaterials: 0
   materials:
     innerMaterial: {fileID: 0}
     mappingScale: 0.1
@@ -93919,6 +94182,7 @@ MonoBehaviour:
   fading:
     onDemolition: 1
     onActivation: 0
+    byOffset: 0
     lifeType: 4
     lifeTime: 7
     lifeVariation: 3
@@ -93928,11 +94192,11 @@ MonoBehaviour:
   reset:
     transform: 1
     damage: 1
+    connectivity: 0
     action: 0
     destroyDelay: 1
     mesh: 4
     fragments: 0
-    shards: 0
   initialized: 0
   meshes: []
   pivots: []
@@ -94957,6 +95221,11 @@ PrefabInstance:
     - target: {fileID: 1409356609672223094, guid: 1fab8c9520621b84896290957c8ca856,
         type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409356609672223094, guid: 1fab8c9520621b84896290957c8ca856,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1807691572454453491, guid: 1fab8c9520621b84896290957c8ca856,
