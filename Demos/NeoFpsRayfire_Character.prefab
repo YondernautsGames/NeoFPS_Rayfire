@@ -305,22 +305,27 @@ PrefabInstance:
     - target: {fileID: 114494700223802258, guid: 2345fa8f7cb306c499e81465ce9c1bd8,
         type: 3}
       propertyPath: m_ForceMultiplier
-      value: 500
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114494700223802258, guid: 2345fa8f7cb306c499e81465ce9c1bd8,
         type: 3}
       propertyPath: m_MaxForce
-      value: 20000
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114526402341856060, guid: 2345fa8f7cb306c499e81465ce9c1bd8,
+        type: 3}
+      propertyPath: m_CanDamageSelf
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114558082525576610, guid: 2345fa8f7cb306c499e81465ce9c1bd8,
         type: 3}
       propertyPath: m_ForceMultiplier
-      value: 500
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114558082525576610, guid: 2345fa8f7cb306c499e81465ce9c1bd8,
         type: 3}
       propertyPath: m_MaxForce
-      value: 20000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 114660341047048418, guid: 2345fa8f7cb306c499e81465ce9c1bd8,
         type: 3}

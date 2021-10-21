@@ -86,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 114279086836689452, guid: 629f7d2c2a05c3b4d9df1274a2bebf8c,
         type: 3}
       propertyPath: m_MaxForce
-      value: 15
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 114279086836689452, guid: 629f7d2c2a05c3b4d9df1274a2bebf8c,
         type: 3}

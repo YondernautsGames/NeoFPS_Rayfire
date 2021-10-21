@@ -144,19 +144,6 @@ MonoBehaviour:
   m_VelocityType: 1
   m_ComparisonType: 4
   m_CompareValue: 5
---- !u!114 &114008401277459428
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a874951dbda4ab741bcdefe7475c587b, type: 3}
-  m_Name: Condition Group
-  m_EditorClassIdentifier: 
-  m_Comparison: 1
 --- !u!114 &114012685883913930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -431,9 +418,17 @@ MonoBehaviour:
   m_TransitionOn: 0
   m_Conditions:
   - {fileID: 114781998294381790}
-  - {fileID: 114008401277459428}
   - {fileID: 114464479347480946}
-  m_ConditionGroups: []
+  - {fileID: 114474245989537362}
+  m_ConditionGroups:
+  - m_Name: GroundOrForwards
+    m_TransitionOn: 1
+    m_Conditions:
+    - {fileID: 114928131677994132}
+    - {fileID: 114688751952781226}
+    m_ID: -1704183539
+    m_Connection: {fileID: 114059962919198342}
+    collapsed: 0
 --- !u!114 &114061923841123422
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1235,7 +1230,7 @@ MonoBehaviour:
   expanded: 1
   m_OnEnter: 0
   m_OnExit: 1
-  m_MaxForce: 25
+  m_MaxForce: 120
   m_Radius: 4
   m_Offset: 0.1
   m_RelativeSpeedThreshold: 10
@@ -1541,8 +1536,8 @@ MonoBehaviour:
   expanded: 1
   m_OnEnter: 0
   m_OnExit: 2
-  m_MaxForce: 50
-  m_Radius: 4
+  m_MaxForce: 120
+  m_Radius: 3
   m_Offset: -0.25
   m_RelativeSpeedThreshold: 10
 --- !u!114 &114296789751003724
@@ -2524,7 +2519,7 @@ MonoBehaviour:
   m_Name: Condition Group
   m_EditorClassIdentifier: 
   m_TimeValue: {fileID: 114997098723117580}
-  m_CompareValue: 1
+  m_CompareValue: 0.5
   m_ComparisonType: 0
 --- !u!114 &114468162450717092
 MonoBehaviour:
@@ -2605,6 +2600,20 @@ MonoBehaviour:
   m_VelocityType: 1
   m_ComparisonType: 4
   m_CompareValue: 1
+--- !u!114 &114474245989537362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a1a99b4e40ffd4aa162b1ff93db010, type: 3}
+  m_Name: Condition
+  m_EditorClassIdentifier: 
+  m_Connection: {fileID: 114059962919198342}
+  m_ID: -1704183539
 --- !u!114 &114474692829160216
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -3496,6 +3505,20 @@ MonoBehaviour:
   m_Conditions:
   - {fileID: 114030184177288646}
   m_ConditionGroups: []
+--- !u!114 &114688751952781226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f876ce841235e254e91ae0ff1407d9bd, type: 3}
+  m_Name: Condition Group
+  m_EditorClassIdentifier: 
+  m_ComparisonType: 2
+  m_CompareValue: -45
 --- !u!114 &114692009798853832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4332,7 +4355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a3bae01c7a7aa4aa9d79de7c3caa0e, type: 3}
   m_Name: Dash (Anim Curve)
   m_EditorClassIdentifier: 
-  uiPosition: {x: -7.500183, y: 226.99988}
+  uiPosition: {x: -6.500244, y: 234.99988}
   defaultName: NewState
   m_Parent: {fileID: 114316048160623644}
   m_Connections:
@@ -4345,7 +4368,7 @@ MonoBehaviour:
   stateName: 
   m_DashSpeed:
     m_Data: {fileID: 0}
-    m_Value: 50
+    m_Value: 75
   m_MaxControlSpeed:
     m_Data: {fileID: 0}
     m_Value: 5
@@ -4357,7 +4380,7 @@ MonoBehaviour:
     m_Value: 0.5
   m_Acceleration:
     m_Data: {fileID: 0}
-    m_Value: 50
+    m_Value: 75
   m_FrameOfReference: 0
   m_DashAngle: 0
   m_DashInTime: 0.05
@@ -4377,24 +4400,6 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.1
       value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.7
-      value: -0.05
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.9
-      value: 0.02
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4470,6 +4475,19 @@ MonoBehaviour:
   m_VelocityType: 2
   m_ComparisonType: 4
   m_CompareValue: -25
+--- !u!114 &114928131677994132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a874951dbda4ab741bcdefe7475c587b, type: 3}
+  m_Name: Condition Group
+  m_EditorClassIdentifier: 
+  m_Comparison: 1
 --- !u!114 &114929281217811956
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -29,10 +29,24 @@ namespace NeoFPS.Rayfire
         [SerializeField, Tooltip("Should the explosion affect kinematic rayfire rigidbodies? If so, then they will be switched to dynamic if the rayfire rigid allows it")]
         public bool m_AffectKinematic = false;
 
+        [SerializeField, Tooltip("The amount of random rotation to add to the rayfire rigidbodies affected")]
+        public float m_Lift = 2f;
+
         [SerializeField, Range(0f, 1f), Tooltip("The amount of random rotation to add to the rayfire rigidbodies affected")]
         public float m_Chaos = 0.5f;
 
         private List<RayfireRigid> m_RayfireRigidbodies = new List<RayfireRigid>();
+
+        protected override bool raycastCheck
+        {
+            get { return false; }
+        }
+
+        protected override void OnValidate()
+        {
+            base.OnValidate();
+            m_Lift = Mathf.Clamp(m_Lift, -10f, 10f);
+        }
 
         public override void Explode(float maxDamage, float maxForce, IDamageSource source = null, Transform ignoreRoot = null)
         {
@@ -42,7 +56,7 @@ namespace NeoFPS.Rayfire
             m_RayfireRigidbodies.Clear();
         }
 
-        protected override void ApplyExplosionForceEffect(ImpactHandlerInfo info, Vector3 explosionCenter, float maxForce)
+        protected override void ApplyExplosionForceEffect(ImpactHandlerInfo info, Vector3 explosionCenter)
         {
             Debug.Log("Adding explosion force");
 
@@ -70,7 +84,7 @@ namespace NeoFPS.Rayfire
                     SetKinematic(rayfireRB, rigidbody);
 
                     // Add explosion force
-                    rigidbody.AddExplosionForce(maxForce, explosionCenter, radius, 0.25f, ForceMode.Impulse);
+                    rigidbody.AddExplosionForce(maxForce, explosionCenter, radius, m_Lift, ForceMode.Impulse);
 
                     // Get local rotation strength 
                     if (m_Chaos > 0.01f)
@@ -82,7 +96,7 @@ namespace NeoFPS.Rayfire
                 }
             }
             else
-                base.ApplyExplosionForceEffect(info, explosionCenter, maxForce);
+                base.ApplyExplosionForceEffect(info, explosionCenter);
         }
 
         // Explode kinematic objects
