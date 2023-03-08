@@ -70,11 +70,11 @@ namespace NeoFPS.Rayfire
             {
                 m_RayfireRigidbodies.Add(rayfireRB);
 
-                if (rayfireRB.activation.byImpact)
+                if (rayfireRB.activation.imp)
                     rayfireRB.Activate();
 
                 // Apply damage
-                if (rayfireRB.damage.enable == true)
+                if (rayfireRB.damage.en == true)
                     rayfireRB.ApplyDamage(maxDamage * info.falloff, explosionCenter);
 
                 // Apply force

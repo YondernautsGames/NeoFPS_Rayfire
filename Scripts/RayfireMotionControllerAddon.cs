@@ -137,7 +137,7 @@ namespace NeoFPS.Rayfire
 
                 float falloff = 1f;// - Mathf.Clamp01(hit.distance / m_Radius); // TODO: Calculate distance for falloff?
 
-                if (rigid.activation.byImpact)
+                if (rigid.activation.imp)
                     rigid.Activate();
 
                 // Apply force

@@ -25,7 +25,7 @@ namespace NeoFPS.Rayfire
         public static void SetSimulationType(this RayfireRigid rigid, SimType simType)
         {
             rigid.simulationType = SimType.Dynamic;
-            RFPhysic.SetSimulationType(rigid.physics.rigidBody, rigid.simulationType, rigid.objectType, rigid.physics.useGravity, rigid.physics.solverIterations);
+            RFPhysic.SetSimulationType(rigid.physics.rigidBody, rigid.simulationType, rigid.objectType, rigid.physics.gr, rigid.physics.si);
         }
     }
 }

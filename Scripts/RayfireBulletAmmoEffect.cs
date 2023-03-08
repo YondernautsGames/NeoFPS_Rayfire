@@ -149,7 +149,7 @@ namespace NeoFPS.Rayfire
                                 ((MeshCollider)rigid.physics.meshCollider).convex = true;
                         }
 
-                        if (rigid.activation.byImpact == true)
+                        if (rigid.activation.imp == true)
                             rigid.Activate();
                     }
 
@@ -206,7 +206,7 @@ namespace NeoFPS.Rayfire
 
                 // Group Activation first
                 for (int i = 0; i < impactRigidList.Count; i++)
-                    if (impactRigidList[i].activation.byImpact == true)
+                    if (impactRigidList[i].activation.imp == true)
                         if (impactRigidList[i].simulationType == SimType.Inactive || impactRigidList[i].simulationType == SimType.Kinematic)
                             impactRigidList[i].Activate();
 
@@ -258,7 +258,7 @@ namespace NeoFPS.Rayfire
         RayfireRigid ImpactDamage(RayfireRigid scrRigid, RaycastHit hit, Vector3 shootPos, Vector3 shootVector, Vector3 impactPoint)
         {
             // No damage or damage disabled
-            if (scrRigid.damage.enable == false)
+            if (scrRigid.damage.en == false)
                 return scrRigid;
 
             // Check for demolition TODO input collision collider if radius is 0
