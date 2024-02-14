@@ -32,6 +32,9 @@ You can also optimise further, but the most important layers that rayfire object
 + *Doors*
 + *Rayfire*
 
+> [!WARNING]
+> Do not place the integration folder inside the NeoFPS asset folder structure. If you do this then all of its scripts will be picked up by the NeoFPS assembly definition, which will limit what other scripts within the project they have access to. For more information on assembly definitions, see [the Unity Manual](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html).
+
 ## Features
 
 The integration focusses on 2 areas: firearms and the FPS character controller.
