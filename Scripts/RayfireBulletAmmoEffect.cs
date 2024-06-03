@@ -285,19 +285,17 @@ namespace NeoFPS.Rayfire
         // Impact Debris
         void ImpactDebris(RayfireRigid source, Vector3 impactPos, Vector3 impactNormal)
         {
-            if (m_Debris == true && source.HasDebris == true)
-                for (int i = 0; i < source.debrisList.Count; i++)
-                    if (source.debrisList[i].onImpact == true)
-                        RFParticles.CreateDebrisImpact(source.debrisList[i], impactPos, impactNormal);
+            var debris = source.GetComponent<RayfireDebris>();
+            if (debris != null)
+                debris.Emit();
         }
 
         // Impact Dust
         void ImpactDust(RayfireRigid source, Vector3 impactPos, Vector3 impactNormal)
         {
-            if (m_Dust == true && source.HasDust == true)
-                for (int i = 0; i < source.dustList.Count; i++)
-                    if (source.dustList[i].onImpact == true)
-                        RFParticles.CreateDustImpact(source.dustList[i], impactPos, impactNormal);
+            var dust = source.GetComponent<RayfireDust>();
+            if (dust != null)
+                dust.Emit();
         }
     }
 }
