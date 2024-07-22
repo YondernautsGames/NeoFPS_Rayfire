@@ -58,8 +58,6 @@ namespace NeoFPS.Rayfire
 
         protected override void ApplyExplosionForceEffect(ImpactHandlerInfo info, Vector3 explosionCenter)
         {
-            Debug.Log("Adding explosion force");
-
             // Check for rayfire rigid
             var rigidbody = info.collider.attachedRigidbody;
             RayfireRigid rayfireRB = rigidbody == null
@@ -110,8 +108,8 @@ namespace NeoFPS.Rayfire
                     rigid.SetSimulationType(SimType.Dynamic);
 
                     // Set convex shape
-                    if (rigid.physics.meshCollider is MeshCollider == true)
-                        ((MeshCollider)rigid.physics.meshCollider).convex = true;
+                    if (rigid.physics.mc is MeshCollider == true)
+                        ((MeshCollider)rigid.physics.mc).convex = true;
                 }
             }
         }

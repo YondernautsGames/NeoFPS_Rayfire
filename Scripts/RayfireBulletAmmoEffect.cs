@@ -145,8 +145,8 @@ namespace NeoFPS.Rayfire
                             rigid.SetSimulationType (SimType.Dynamic);
 
                             // Set convex shape
-                            if (rigid.physics.meshCollider is MeshCollider == true)
-                                ((MeshCollider)rigid.physics.meshCollider).convex = true;
+                            if (rigid.physics.mc is MeshCollider == true)
+                                ((MeshCollider)rigid.physics.mc).convex = true;
                         }
 
                         if (rigid.activation.imp == true)
@@ -224,12 +224,12 @@ namespace NeoFPS.Rayfire
                         impactRigidList[i].SetSimulationType(SimType.Dynamic);
 
                         // Set convex shape
-                        if (impactRigidList[i].physics.meshCollider is MeshCollider == true)
-                            ((MeshCollider)impactRigidList[i].physics.meshCollider).convex = true;
+                        if (impactRigidList[i].physics.mc is MeshCollider == true)
+                            ((MeshCollider)impactRigidList[i].physics.mc).convex = true;
                     }
 
                     // Collect
-                    impactRbList.Add(impactRigidList[i].physics.rigidBody);
+                    impactRbList.Add(impactRigidList[i].physics.rb);
                 }
                 //}
             }

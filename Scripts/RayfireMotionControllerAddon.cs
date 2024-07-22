@@ -153,8 +153,8 @@ namespace NeoFPS.Rayfire
                             rigid.SetSimulationType(SimType.Dynamic);
 
                             // Set convex shape
-                            if (rigid.physics.meshCollider is MeshCollider == true)
-                                ((MeshCollider)rigid.physics.meshCollider).convex = true;
+                            if (rigid.physics.mc is MeshCollider == true)
+                                ((MeshCollider)rigid.physics.mc).convex = true;
                         }
                     }
 

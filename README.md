@@ -3,7 +3,7 @@ NeoFPS and Rayfire for Unity integration assets
 
 ## Requirements
 
-This repository was created using Unity 2020.3
+This repository was created using Unity 2018.4
 
 It requires the assets [NeoFPS](https://assetstore.unity.com/packages/templates/systems/neofps-150179?aid=1011l58Ft) and [Rayfire for Unity](https://assetstore.unity.com/packages/tools/game-toolkits/rayfire-for-unity-148690?aid=1011l58Ft).
 
@@ -62,10 +62,16 @@ The motion graph is set up with a jetpack (hold space / jump to hover), ground d
 
 The bridges each have a trigger zone set up that enables the character activator. Running over the bridges will cause them to collapse after a brief delay.
 
-## Troubleshooting & Known Issues
+## Notes
 
-- You will need to modify any cameras to make the **Rayfire** layer visible. This may be off by default
-- If your debris colliders have bevels then you may need to increase the **NeoCharacterController**'s "Ground Hit Lookahead" setting. This allows the character to check whether it hit a slope or the corner of a ledge, and a bevel may trick the controller into thinking it is a slope when it is not. The demo character uses a setting of 0.1 compared to the default 0.005
-- Due to the way that the NeoCharacterController acts on physics objects (it is pushed by and exerts a force on all non-kinematic rigidbodies as it moves), I found that the best setup for Rayfire clusters was to set their simulation type as *Kinematic* and then activate them via the integration systems. If the rayfire rigid is set to use the *Dynamic*, *Sleeping* or *Inactive* simulation types, then you can slowly push through the objects just by holding down the movement direction into their surface.
+Due to the way that the NeoCharacterController acts on physics objects (it is pushed by and exerts a force on all non-kinematic rigidbodies as it moves), I found that the best setup for Rayfire clusters was to set their simulation type as *Kinematic* and then activate them via the integration systems. If the rayfire rigid is set to use the *Dynamic*, *Sleeping* or *Inactive* simulation types, then you can slowly push through the objects just by holding down the movement direction into their surface.
+
+## Issues
+
 - Very occasionally the wrecking ball will not trigger the objects to destruct, so it will just stop the character dead.
 - If you shoot out the two sides of the stone bridge so that the center drops as a single section, then walking over that will add a huge upward force to the character controller.
+
+## Future Work
+
+- Melee weapons will be added after the major rework. This will allow for more modular melee weapon setup similar to the firearms. Both impact and slice effects will be added at this point.
+- I will look at adding shooter modules to the modular firearms that can slice objects similar to shipbreaker or dead space.
