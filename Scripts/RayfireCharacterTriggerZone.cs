@@ -124,41 +124,43 @@ namespace NeoFPS.Rayfire
 
         protected override void OnCharacterExited(ICharacter c)
         {
-            if (m_ActivatorAction == RayfireAction.Enable && m_DisableActivatorOnExit)
+            if (c is Component)
             {
-                var activator = c.GetComponentInChildren<RayfireCharacterActivator>();
-                if (activator != null)
-                    activator.DisableActivationField();
-            }
-
-            if (m_FlipCollisionsOnExit)
-            {
-                switch (m_CollisionsAction)
+                if (m_ActivatorAction == RayfireAction.Enable && m_DisableActivatorOnExit)
                 {
-                    case RayfireAction.Enable:
-                        {
-                            var rayfireMotion = c.GetComponent<RayfireMotionControllerAddon>();
-                            if (rayfireMotion != null)
-                                rayfireMotion.DisableRayfireCollisions();
-                        }
-                        break;
-                    case RayfireAction.Disable:
-                        {
-                            var rayfireMotion = c.GetComponent<RayfireMotionControllerAddon>();
-                            if (rayfireMotion != null)
-                                rayfireMotion.EnableRayfireCollisions();
-                        }
-                        break;
+                    var activator = c.GetComponentInChildren<RayfireCharacterActivator>();
+                    if (activator != null)
+                        activator.DisableActivationField();
+                }
+
+                if (m_FlipCollisionsOnExit)
+                {
+                    switch (m_CollisionsAction)
+                    {
+                        case RayfireAction.Enable:
+                            {
+                                var rayfireMotion = c.GetComponent<RayfireMotionControllerAddon>();
+                                if (rayfireMotion != null)
+                                    rayfireMotion.DisableRayfireCollisions();
+                            }
+                            break;
+                        case RayfireAction.Disable:
+                            {
+                                var rayfireMotion = c.GetComponent<RayfireMotionControllerAddon>();
+                                if (rayfireMotion != null)
+                                    rayfireMotion.EnableRayfireCollisions();
+                            }
+                            break;
+                    }
+                }
+
+                if (m_WreckingBallAction == RayfireAction.Enable && m_DisableWreckingBallOnExit)
+                {
+                    var rayfireMotion = c.GetComponent<RayfireMotionControllerAddon>();
+                    if (rayfireMotion != null)
+                        rayfireMotion.DisableWreckingBall();
                 }
             }
-
-            if (m_WreckingBallAction == RayfireAction.Enable && m_DisableWreckingBallOnExit)
-            {
-                var rayfireMotion = c.GetComponent<RayfireMotionControllerAddon>();
-                if (rayfireMotion != null)
-                    rayfireMotion.DisableWreckingBall();
-            }
-
             base.OnCharacterExited(c);
         }
     }

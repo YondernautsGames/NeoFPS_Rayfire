@@ -68,7 +68,7 @@ namespace NeoFPS.Rayfire
             {
                 m_RayfireRigidbodies.Add(rayfireRB);
 
-                if (rayfireRB.activation.imp)
+                if (rayfireRB.act.imp)
                     rayfireRB.Activate();
 
                 // Apply damage

@@ -84,10 +84,12 @@ namespace NeoFPS.Rayfire
             if (rigid != null)
             {
                 // Impact Debris and dust
-                ImpactDebris(rigid, hit.point, hit.normal);
+				if (m_Debris)
+					ImpactDebris(rigid, hit.point, hit.normal);
 
                 // Impact Dust
-                ImpactDust(rigid, hit.point, hit.normal);
+				if (m_Dust)
+					ImpactDust(rigid, hit.point, hit.normal);
 
                 // Apply damage and return new demolished rigid fragment 
                 var shootVector = rayDirection * (hit.distance + 0.01f);
@@ -149,7 +151,7 @@ namespace NeoFPS.Rayfire
                                 ((MeshCollider)rigid.physics.mc).convex = true;
                         }
 
-                        if (rigid.activation.imp == true)
+                        if (rigid.act.imp == true)
                             rigid.Activate();
                     }
 
@@ -206,7 +208,7 @@ namespace NeoFPS.Rayfire
 
                 // Group Activation first
                 for (int i = 0; i < impactRigidList.Count; i++)
-                    if (impactRigidList[i].activation.imp == true)
+                    if (impactRigidList[i].act.imp == true)
                         if (impactRigidList[i].simulationType == SimType.Inactive || impactRigidList[i].simulationType == SimType.Kinematic)
                             impactRigidList[i].Activate();
 

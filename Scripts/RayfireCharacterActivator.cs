@@ -127,7 +127,7 @@ namespace NeoFPS.Rayfire
                 return;
 
             //Activation
-            if (rigid.activation.act && rigid.simulationType == SimType.Inactive || rigid.simulationType == SimType.Kinematic)
+            if (rigid.act.act && rigid.simulationType == SimType.Inactive || rigid.simulationType == SimType.Kinematic)
             {
                 if (m_Delay <= 0)
                     rigid.Activate();
