@@ -38,7 +38,7 @@ The integration focusses on 2 areas: firearms and the FPS character controller.
 
 ### Firearms
 
-The **Rayfire Bullet Ammo Effect** component is an ammo effect module for the NeoFPS modular firearm system. This adds the ability to activate and destroy rayfire rigid objects to any NeoFPS firearm and can be stacked with bullet effects such as penetration and ricochet. For more information on modular firearms. see the [NeoFPS Documentation](https://docs.neofps.com/manual/weapons-modular-firearms.html).
+The **Rayfire Bullet Ammo Effect** component is an ammo effect module for the NeoFPS modular firearm system. This adds the ability to activate and destroy rayfire rigid objects to any NeoFPS firearm and can be stacked with bullet effects such as penetration and ricochet. Note that you will need to set the **"Layers"** setting of the firearm's shooter module to include the rayfire layer in order for your bullets to hit the rayfire objects. For more information on modular firearms. see the [NeoFPS Documentation](https://docs.neofps.com/manual/weapons-modular-firearms.html).
 
 The **Rayfire Pooled Explosion** component is a specialisation of the NeoFPS explosion component which adds the ability to activate and destroy rayfire rigid objects within its explosion radius. You can swap the **Pooled Explosion** component from any explosion prefabs with this, and then use it in explosive weapons and environmental effects such as exploding barrels.
 
