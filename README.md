@@ -3,9 +3,11 @@ NeoFPS and Rayfire for Unity integration assets
 
 ## Requirements
 
-This repository was created using Unity 2018.4
+This repository was created using Unity 2019.4 nad Rayfire 1
 
 It requires the assets [NeoFPS](https://assetstore.unity.com/packages/templates/systems/neofps-150179?aid=1011l58Ft) and [Rayfire for Unity](https://assetstore.unity.com/packages/tools/game-toolkits/rayfire-for-unity-148690?aid=1011l58Ft).
+
+**_NOTE:_** This repository does not currently support Rayfire 2 which has just released at the time of writing this. I will be working on updating it as soon as I get the chance
 
 ## Installation
 
